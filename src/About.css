@@ -1,0 +1,154 @@
+/* .about-main{
+
+    margin: 0px;
+    color: aliceblue;
+    height: 100vh;
+}
+.about-main h1{
+    text-align: center;
+    font-size:80px ;
+    margin-top:20px ;
+    
+    
+}
+.about-content{
+    display: flex;
+    justify-content: space-around;
+    
+    margin-top: 30px;
+   justify-content: center;
+  
+}
+.about-left{
+    
+    padding: 20px;
+    font-size: 26px;
+   
+}
+.about-left h2{
+    background: linear-gradient(180deg, #09e8ff 20%, #904ffe 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.skills{
+    display: flex;
+   
+    font-size: 60px;
+    gap:60px;
+}
+.about-right{
+    
+    padding: 20px;
+}
+.about-right img{
+    width: 300px;
+    height:450px;
+    border-radius: 20px;
+     
+} */
+.about-main {
+    margin: 0px;
+    color: aliceblue;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.about-main h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 40px;
+}
+
+.about-left {
+    padding: 20px;
+    font-size: 1.3rem;
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+.about-left h2 {
+    background: linear-gradient(180deg, #09e8ff 20%, #904ffe 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 1.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 4rem;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.about-right {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-right img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* ------------------- */
+/* MEDIA QUERIES */
+/* ------------------- */
+
+@media screen and (max-width: 1024px) {
+    .about-main h1 {
+        font-size: 3.5rem;
+    }
+    .about-left {
+        font-size: 1.1rem;
+    }
+    .skills {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-main h1 {
+        font-size: 3rem;
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-left {
+        font-size: 1rem;
+    }
+    .skills {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-main h1 {
+        font-size: 2.2rem;
+    }
+    .about-left {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    .skills {
+        font-size: 2rem;
+        gap: 15px;
+    }
+}
