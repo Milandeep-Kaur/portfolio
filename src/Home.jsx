@@ -2,8 +2,8 @@ import React from "react";
 
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import { useMotionValue, useSpring } from "framer-motion";
-import { useEffect,useState} from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useEffect} from "react";
+
 import { Link, Element} from "react-scroll";
 import  About from './About';
 import './Home.css';
@@ -16,9 +16,8 @@ import developer from './developer.png';
 import Experience from "./Experience.jsx";
 import Contact from "./Contact.jsx";
 const Home=()=>{
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+ 
 
-  const [isOpen, setIsOpen] = useState(false);
 
   const mouseX = useMotionValue(0);
 const mouseY = useMotionValue(0);
@@ -38,15 +37,7 @@ useEffect(() => {
   return () => window.removeEventListener("mousemove", handleMouseMove);
 }, []);
 
-//for mobile
-useEffect(() => {
 
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-
-
-}, []);
 
     return(
     <>
@@ -56,53 +47,14 @@ useEffect(() => {
             
         <div className="navbar">
           {/* Desktop Menu */}
-          <ul className="nav-links">
+         
             <li><Link to="home" spy={true} smooth={true} duration={500} activeClass="active" offset={-80}>Home</Link></li>
             <li><Link to="about" spy={true} smooth={true} duration={500} activeClass="active" offset={-80}>About</Link></li>
             <li><Link to="project" spy={true} smooth={true} duration={500} activeClass="active" offset={-80}>Projects</Link></li>
             <li><Link to="experience" spy={true} smooth={true} duration={500} activeClass="active" offset={-100}>Experience</Link></li>
             <li><Link to="contact" spy={true} smooth={true} duration={500} activeClass="active" offset={-80}>Contact</Link></li>
-          </ul>
-
-          {/* Hamburger Icon */}
-          <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <FaTimes size={24} color="#09e8ff" /> : <FaBars size={24} color="#fff" />}
-          </div>
-
-          {/* Mobile Menu */}
-          {isOpen && (
-  <motion.div
-    className="backdrop"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.3 }}
-    onClick={() => setIsOpen(false)}
-  >
-    <motion.ul
-      className="mobile-menu"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
-      onClick={(e) => e.stopPropagation()} // prevent backdrop click
-    >
-      {["home", "about", "project", "experience", "contact"].map((section) => (
-        <li key={section}>
-          <Link
-            to={section}
-            smooth={true}
-            duration={500}
-            onClick={() => setIsOpen(false)}
-          >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
-          </Link>
-        </li>
-      ))}
-    </motion.ul>
-  </motion.div>
-)}
-
+        
+          
 
         </div>
 
@@ -149,15 +101,7 @@ useEffect(() => {
     <Project/>
     <Experience/>
     <Contact/>
-    {isMobile ? (
-  <motion.div
-    className="mobile-trail"
-    style={{
-      x: smoothX,
-      y: smoothY,
-    }}
-  />
-) : (
+    
   <motion.div
     className="cursor-indicator"
     style={{
@@ -165,7 +109,6 @@ useEffect(() => {
       y: smoothY,
     }}
   />
-)}
 
 
 
