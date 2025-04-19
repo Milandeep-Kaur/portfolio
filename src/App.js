@@ -5,6 +5,7 @@ import About from "./About.jsx";
 import Project from "./Project.jsx";
 import Experience from "./Experience.jsx";
 import Contact from "./Contact.jsx";
+import './App.css';
 
 function App() {
   return (

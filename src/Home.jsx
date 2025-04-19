@@ -19,6 +19,10 @@ const Home=()=>{
   const mouseX = useMotionValue(0);
 const mouseY = useMotionValue(0);
 
+//for mobile
+const touchX = useMotionValue(0);
+const touchY = useMotionValue(0);
+
 const smoothX = useSpring(mouseX, { stiffness: 150, damping: 20 });
 const smoothY = useSpring(mouseY, { stiffness: 150, damping: 20 });
 
@@ -30,6 +34,21 @@ useEffect(() => {
 
   window.addEventListener("mousemove", handleMouseMove);
   return () => window.removeEventListener("mousemove", handleMouseMove);
+}, []);
+
+//for mobile
+useEffect(() => {
+  const handleTouchMove = (e) => {
+    if (e.touches.length > 0) {
+      touchX.set(e.touches[0].clientX);
+      touchY.set(e.touches[0].clientY);
+    }
+  };
+
+  window.addEventListener("touchmove", handleTouchMove);
+  return () => {
+    window.removeEventListener("touchmove", handleTouchMove);
+  };
 }, []);
 
     return(
@@ -101,6 +120,14 @@ useEffect(() => {
     y: smoothY,
   }}
 />
+<motion.div
+  className="mobile-trail"
+  style={{
+    x: smoothX,
+    y: smoothY,
+  }}
+/>
+
 
     </>
     );
