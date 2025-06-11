@@ -21,13 +21,13 @@ I specialize in both **front-end** and **back-end** technologies and enjoy creat
 
 ## 🚀 Live Preview
 
-🔗 [Visit My Portfolio](https://milandeep-kaur.github.io/your-portfolio-link)
+🔗 [Visit My Portfolio](https://milandeep-kaur.github.io/portfolio/)
 
 ---
 
 ## 📸 Screenshot
 
-![Portfolio Screenshot]("https://drive.google.com/drive/home")
+![Portfolio Screenshot](https://drive.google.com/drive/home)
 
 
 ---
