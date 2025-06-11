@@ -27,7 +27,7 @@ I specialize in both **front-end** and **back-end** technologies and enjoy creat
 
 ## 📸 Screenshot
 
-![Portfolio Screenshot](https://drive.google.com/drive/home)
+![Portfolio Screenshot](https://github.com/user-attachments/assets/55ed61f6-3a6c-4da7-ac5b-429a16d6cf88)
 
 
 ---
